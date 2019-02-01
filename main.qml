@@ -7,7 +7,9 @@ Window {
     width: 640
     height: 480
     title: qsTr("Hello World")
-
+    
+    
+    //TESTING A HARDCODED GRAPH
     ChartView {
         title: "Line"
         anchors.fill: parent
