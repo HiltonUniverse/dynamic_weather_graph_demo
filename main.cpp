@@ -1,9 +1,13 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QApplication>
+#include "weather.h"
+#include <QDebug>
 
 #include "weatherJasonParser.h"
 #include <iostream>
+#include "weather.h"
+#include <QQmlContext>
 
 namespace
 {
@@ -18,10 +22,13 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
     WeatherJsonParser parser("leuven",&app);
 
+    //Inject the cpp object into the qml file
+    engine.rootContext()->setContextProperty("weatherInformation", &parser);
+
+    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
     if (engine.rootObjects().isEmpty())
         return -1;

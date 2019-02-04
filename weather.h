@@ -20,9 +20,14 @@ namespace weather
 
     struct Weather
     {
+        Q_GADGET
+    public:
         QString m_city_name;
         QString m_country_name;
         std::vector<weather::MinMaxInfo> m_temp_info;
+
+        Q_PROPERTY(QString cityName MEMBER m_city_name)
+        Q_PROPERTY(QString countryName MEMBER m_country_name)
 
         static void printDebugInfo(const Weather& weather)
         {
@@ -40,9 +45,9 @@ namespace weather
             std::for_each(std::begin(weather.m_temp_info), std::end(weather.m_temp_info),min_max_info);
 
         }
+
     };
 
 }
-
 
 #endif // WEATHER_H

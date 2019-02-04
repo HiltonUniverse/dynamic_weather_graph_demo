@@ -17,7 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
     jsonfetch.cpp \
-    jsonobjectfactor.cpp
+    WeatherJsonParser.cpp
 
 RESOURCES += qml.qrc
 
