@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <iterator>
 
+
 namespace weather
 {
     struct MinMaxInfo
@@ -22,12 +23,14 @@ namespace weather
     {
         Q_GADGET
     public:
-        QString m_city_name;
+        QString m_city_name = "leuven";
         QString m_country_name;
         std::vector<weather::MinMaxInfo> m_temp_info;
 
         Q_PROPERTY(QString cityName MEMBER m_city_name)
         Q_PROPERTY(QString countryName MEMBER m_country_name)
+        Q_PROPERTY(std::vector<weather::MinMaxInformation> tempInfo MEMBER m_temp_info)
+
 
         static void printDebugInfo(const Weather& weather)
         {

@@ -3,6 +3,7 @@ import QtQuick.Window 2.2
 import QtCharts 2.3
 
 
+
 /* information on passing signals from c++ to qml
 
 https://code.i-harness.com/en/q/86cc63
@@ -20,7 +21,7 @@ Window {
       onParseCompleted:{
 
         console.log("Data Must Come here")
-//         console.log(weatherInformation.structValues.cityName) -> ERROR
+//        console.log(weatherInformation.structValues.cityName)
       }
   }
 

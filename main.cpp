@@ -22,13 +22,15 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
+    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
     WeatherJsonParser parser("leuven",&app);
+
 
     //Inject the cpp object into the qml file
     engine.rootContext()->setContextProperty("weatherInformation", &parser);
 
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+//    qmlRegisterType<weather::Weather>("weather.h",1,0,"Weather");
 
     if (engine.rootObjects().isEmpty())
         return -1;
