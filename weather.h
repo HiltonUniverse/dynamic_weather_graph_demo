@@ -1,10 +1,12 @@
 #ifndef WEATHER_H
 #define WEATHER_H
 
+
+#include <QDebug>
 #include <QString>
+#include <QDate>
 #include <memory>
 #include <iostream>
-#include <QDebug>
 #include <algorithm>
 #include <iterator>
 
@@ -13,7 +15,7 @@ namespace weather
 {
     struct MinMaxInfo
     {
-        QString m_date;
+        QDate m_date;
         double m_min;
         double m_max;
         QString m_description;
@@ -21,16 +23,10 @@ namespace weather
 
     struct Weather
     {
-        Q_GADGET
     public:
-        QString m_city_name = "leuven";
+        QString m_city_name;
         QString m_country_name;
         std::vector<weather::MinMaxInfo> m_temp_info;
-
-        Q_PROPERTY(QString cityName MEMBER m_city_name)
-        Q_PROPERTY(QString countryName MEMBER m_country_name)
-        Q_PROPERTY(std::vector<weather::MinMaxInformation> tempInfo MEMBER m_temp_info)
-
 
         static void printDebugInfo(const Weather& weather)
         {

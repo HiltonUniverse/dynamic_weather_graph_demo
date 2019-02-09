@@ -17,7 +17,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
     jsonfetch.cpp \
-    WeatherJsonParser.cpp
+    WeatherJsonParser.cpp \
+    chartmodel.cpp
 
 RESOURCES += qml.qrc
 
@@ -36,4 +37,5 @@ HEADERS += \
     jsonfetch.h \
     weatherJasonParser.h \
     weather.h \
-    jsonhelper.h
+    jsonhelper.h \
+    chartmodel.h
