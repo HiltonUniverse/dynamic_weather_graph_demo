@@ -21,8 +21,9 @@ int main(int argc, char *argv[])
     ChartModel chartModel(&app);
 
     //Inject the cpp object into the qml file -> one time instantiate to all QML
-//    engine.rootContext()->setContextProperty("cpp_chart_model", &chartModel);
-    qmlRegisterType<ChartModel>("MainLib",1,0,"ChartModel");
+    engine.rootContext()->setContextProperty("cpp_chart_model", &chartModel);
+
+    //qmlRegisterType<ChartModel>("MainLib",1,0,"ChartModel");
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
